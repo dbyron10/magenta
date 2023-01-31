@@ -129,11 +129,15 @@ def get_bundle():
     Either a generator_pb2.GeneratorBundle or None if the bundle_file flag is
     not set or the save_generator_bundle flag is set.
   """
+  return None
   if FLAGS.save_generator_bundle:
     return None
   if FLAGS.bundle_file is None:
     return None
-  bundle_file = os.path.expanduser(FLAGS.bundle_file)
+  # bundle_file = os.path.expanduser('/Users/dillonbyron/Desktop/Magenta/multiconditioned_performance_with_dynamics.mag')
+  bundle_file = None
+  tf.logging.error("THIS THA PROBLEM:") 
+  tf.logging.error(bundle_file)
   return sequence_generator_bundle.read_bundle_file(bundle_file)
 
 
